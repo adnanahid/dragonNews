@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaUser } from "react-icons/fa6";
+import AuthProvider, { AuthContext } from "./Provider/AuthProvider";
 
 const Navbar = () => {
+  const {name} = useContext(AuthContext)
   return (
     <div className="navbar bg-base-100 mb-12">
-      <div className="navbar-start"></div>
+      <div className="navbar-start">{name && name}</div>
       <div className="navbar-center hidden lg:flex gap-5">
         <NavLink to={"/"} className="text-lg text-gray-600 font-semibold">Home</NavLink>
         <NavLink to={"/about"} className="text-lg text-gray-600 font-semibold">About</NavLink>
