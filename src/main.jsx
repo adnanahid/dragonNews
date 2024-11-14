@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import "./index.css";
 import ErrorPage from "./error-page";
 import Root from "./Root";
@@ -21,8 +21,9 @@ const router = createBrowserRouter([
         children: [
           {
             path: "/",
-            loader: () => fetch("../public/news.json"),
-            element: <Middle></Middle>,
+            // loader: () => fetch("../public/news.json"),
+            // element: <Middle></Middle>,
+            element: <Navigate to="/category/0"></Navigate>
           },
           {
             path: "/category/0",

@@ -16,7 +16,7 @@ const Middle = () => {
   }, [id, data]);
   return (
     <div>
-      <h2 className="text-xl font-bold">Dragon News Home {id}</h2>
+      <h2 className="text-xl font-bold">Dragon News Home</h2>
       <div>
         {allNews.map((newsData) => (
           <NewsCard news={newsData} />
