@@ -13,7 +13,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end flex gap-5">
         <FaUser className="w-7 h-7" />
-        <Link className="bg-gray-700 text-white font-semibold text-xl px-6 py-1">
+        <Link to={"auth/login"} className="bg-gray-700 text-white font-semibold text-xl px-6 py-1">
           Login
         </Link>
       </div>

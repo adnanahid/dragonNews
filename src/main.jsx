@@ -1,6 +1,10 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import "./index.css";
 import ErrorPage from "./error-page";
 import Root from "./Root";
@@ -8,6 +12,9 @@ import Home from "./Home";
 import About from "./About";
 import Career from "./Career";
 import Middle from "./Middle";
+import Login from "./Login";
+import RegisterCard from "./Register";
+
 
 const router = createBrowserRouter([
   {
@@ -21,9 +28,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: "/",
-            // loader: () => fetch("../public/news.json"),
-            // element: <Middle></Middle>,
-            element: <Navigate to="/category/0"></Navigate>
+            element: <Navigate to="/category/0"></Navigate>,
           },
           {
             path: "/category/0",
@@ -44,6 +49,14 @@ const router = createBrowserRouter([
       {
         path: "/career",
         element: <Career></Career>,
+      },
+      {
+        path: "/auth/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/auth/register",
+        element: <RegisterCard></RegisterCard>,
       },
     ],
   },
