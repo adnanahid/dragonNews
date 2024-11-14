@@ -1,24 +1,32 @@
 import Rating from "react-rating";
-import { MdOutlineStarBorderPurple500 } from "react-icons/md";
+import { BsShareFill } from "react-icons/bs";
+import { FaBookmark } from "react-icons/fa";
 
 const NewsCard = ({ news }) => {
   return (
     <div className="mx-auto bg-white shadow-lg rounded-lg overflow-hidden mb-12">
-      <div className="flex items-center px-6 py-3 bg-gray-900 text-white">
-        <img
-          src={news.author.img}
-          alt={news.author.name}
-          className="w-10 h-10 rounded-full mr-3"
-        />
-        <div>
-          <p className="font-semibold">{news.author.name}</p>
-          <p className="text-sm text-gray-300">
-            {new Date(news.author.published_date).toLocaleDateString()}
-          </p>
+      <div className="flex justify-between items-center px-6 py-3 bg-gray-900 text-white">
+        <div className="flex items-center bg-gray-900 text-white">
+          <img
+            src={news.author.img}
+            alt={news.author.name}
+            className="w-10 h-10 rounded-full mr-3"
+          />
+          <div>
+            <p className="font-semibold">{news.author.name}</p>
+            <p className="text-sm text-gray-300">
+              {new Date(news.author.published_date).toLocaleDateString()}
+            </p>
+          </div>
         </div>
-        <button className="ml-auto text-gray-300 hover:text-gray-400">
-          <i className="fas fa-share-alt"></i>
-        </button>
+        <div className="space-x-5">
+          <button className="ml-auto text-gray-300 hover:text-gray-400">
+            <BsShareFill />
+          </button>
+          <button className="ml-auto text-gray-300 hover:text-gray-400">
+            <FaBookmark />
+          </button>
+        </div>
       </div>
       <div className="px-6 py-4">
         <h2 className="text-xl font-bold">{news.title}</h2>
