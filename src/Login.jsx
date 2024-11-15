@@ -19,7 +19,6 @@ const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         setUser(user);
-        setToHome(true);
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {

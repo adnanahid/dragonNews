@@ -3,26 +3,33 @@ import { AuthContext } from "./Provider/AuthProvider";
 import { Navigate } from "react-router-dom";
 
 function RegisterCard() {
-  const { user, setUser, createNewUser } = useContext(AuthContext);
+  const { user, setUser, createNewUser, updateUserProfile } =
+    useContext(AuthContext);
   const [redirectToHome, setRedirectToHome] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
+    const displayName = form.get("name");
+    const photoURL = form.get("photo");
     const email = form.get("email");
     const password = form.get("password");
     createNewUser(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         setUser(user);
-        console.log(user.email);
+        console.log(user);
         setRedirectToHome(true);
-        alert("registration successful")
+        updateUserProfile({
+          displayName,
+          photoURL,
+        });
+        alert("registration successful");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorMessage);
-        alert("fuck Off")
+        alert("fuck Off");
       });
   };
   if (redirectToHome) {

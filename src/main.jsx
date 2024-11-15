@@ -22,6 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    loader: () => fetch("../public/news.json"),
     errorElement: <ErrorPage />,
     children: [
       {
