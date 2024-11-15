@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { BsShareFill } from "react-icons/bs";
 import { FaBookmark } from "react-icons/fa";
-import Rating from "react-rating";
+
 import Right from "./Right";
 
 const Details = () => {
@@ -10,6 +10,7 @@ const Details = () => {
   const { _id } = useParams();
   const findData = data.find((news) => news._id === _id);
   const navigate = useNavigate();
+
 
   return (
     <div className="grid grid-cols-12 gap-3">
