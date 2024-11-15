@@ -6,9 +6,10 @@ const Middle = () => {
   const data = useLoaderData();
   const [allNews, setAllNews] = useState(data);
   const { id } = useParams();
-  const filterData = data.filter((item) => item.category_id === id);
+
   useEffect(() => {
     if (id) {
+      const filterData = data?.filter((item) => item.category_id === id);
       setAllNews(filterData);
     } else {
       setAllNews(data);
@@ -18,7 +19,7 @@ const Middle = () => {
     <div>
       <h2 className="text-xl font-bold">Dragon News Home</h2>
       <div>
-        {allNews.map((newsData) => (
+        {allNews?.map((newsData) => (
           <NewsCard news={newsData} />
         ))}
       </div>

@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    loader: () => fetch("../public/news.json"),
+    loader: () => fetch("/news.json"),
     errorElement: <ErrorPage />,
     children: [
       {
@@ -35,19 +35,19 @@ const router = createBrowserRouter([
           },
           {
             path: "/category/0",
-            loader: () => fetch("../public/news.json"),
+            loader: () => fetch("/news.json"),
             element: <Middle></Middle>,
           },
           {
             path: "/category/:id",
-            loader: () => fetch("../public/news.json"),
+            loader: () => fetch("/news.json"),
             element: <Middle></Middle>,
           },
         ],
       },
       {
         path: "/details/:_id",
-        loader: () => fetch("../public/news.json"),
+        loader: () => fetch("/news.json"),
         element: (
           <Private>
             <Details></Details>

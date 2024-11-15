@@ -7,7 +7,7 @@ const Login = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
+
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -23,7 +23,7 @@ const Login = () => {
       })
       .catch((error) => {
         setError("Failed to login. Please check your credentials.");
-        console.log("Error:", error.code, error.message);
+
       });
   };
 

@@ -17,7 +17,7 @@ function RegisterCard() {
       .then((userCredential) => {
         const user = userCredential.user;
         setUser(user);
-        console.log(user);
+
         setRedirectToHome(true);
         updateUserProfile({
           displayName,
@@ -28,7 +28,7 @@ function RegisterCard() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorMessage);
+
         alert("fuck Off");
       });
   };

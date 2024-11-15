@@ -2,7 +2,7 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
 const Marquees = ({ allData }) => {
-  console.log(allData);
+
   return (
     <section className="bg-gray-200">
       <div className="flex gap-5 items-center p-2">
