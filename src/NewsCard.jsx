@@ -39,7 +39,7 @@ const NewsCard = ({ news }) => {
         <p className="text-gray-600 text-sm mb-2">
           {news.details.slice(0, 150)}...
         </p>
-        <Link to="/details" id={news.category_id} className="text-orange-500 font-semibold">
+        <Link to={`/details/${news._id}`} id={news.category_id} className="text-orange-500 font-semibold">
           Read More
         </Link>
       </div>

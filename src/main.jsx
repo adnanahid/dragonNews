@@ -12,9 +12,11 @@ import Home from "./Home";
 import Career from "./Career";
 import Middle from "./Middle";
 import Login from "./Login";
+import About from "./About";
 import RegisterCard from "./Register";
 import AuthProvider from "./Provider/AuthProvider";
 import Details from "./Details";
+import Private from "./PrivateRouter/Private";
 
 const router = createBrowserRouter([
   {
@@ -43,13 +45,21 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/details",
+        path: "/details/:_id",
         loader: () => fetch("../public/news.json"),
-        element: <Details></Details>,
+        element: (
+          <Private>
+            <Details></Details>
+          </Private>
+        ),
       },
       {
         path: "/career",
         element: <Career></Career>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
       },
       {
         path: "/auth/login",

@@ -15,8 +15,8 @@ const Navbar = () => {
         <NavLink to={"/"} className="text-lg text-gray-600 font-semibold">
           Home
         </NavLink>
-        <NavLink to={"/details"} className="text-lg text-gray-600 font-semibold">
-          Details
+        <NavLink to={"/about"} className="text-lg text-gray-600 font-semibold">
+          About
         </NavLink>
         <NavLink to={"/career"} className="text-lg text-gray-600 font-semibold">
           Career
