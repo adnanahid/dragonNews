@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "./Provider/AuthProvider";
+import { Navigate } from "react-router-dom";
 
 function RegisterCard() {
   const { user, setUser, createNewUser } = useContext(AuthContext);
+  const [redirectToHome, setRedirectToHome] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -12,14 +14,20 @@ function RegisterCard() {
       .then((userCredential) => {
         const user = userCredential.user;
         setUser(user);
-        console.log(user);
+        console.log(user.email);
+        setRedirectToHome(true);
+        alert("registration successful")
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorMessage);
+        alert("fuck Off")
       });
   };
+  if (redirectToHome) {
+    return <Navigate to="/auth/login" />;
+  }
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">

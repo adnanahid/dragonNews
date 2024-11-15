@@ -1,6 +1,7 @@
 import Rating from "react-rating";
 import { BsShareFill } from "react-icons/bs";
 import { FaBookmark } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
   return (
@@ -38,9 +39,9 @@ const NewsCard = ({ news }) => {
         <p className="text-gray-600 text-sm mb-2">
           {news.details.slice(0, 150)}...
         </p>
-        <a href="#" className="text-orange-500 font-semibold">
+        <Link to="/details" id={news.category_id} className="text-orange-500 font-semibold">
           Read More
-        </a>
+        </Link>
       </div>
       <div className="px-6 py-4 flex items-center justify-between border-t">
         <div className="flex items-center text-yellow-500">

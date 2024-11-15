@@ -9,12 +9,12 @@ import "./index.css";
 import ErrorPage from "./error-page";
 import Root from "./Root";
 import Home from "./Home";
-import About from "./About";
 import Career from "./Career";
 import Middle from "./Middle";
 import Login from "./Login";
 import RegisterCard from "./Register";
 import AuthProvider from "./Provider/AuthProvider";
+import Details from "./Details";
 
 const router = createBrowserRouter([
   {
@@ -43,8 +43,9 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/about",
-        element: <About></About>,
+        path: "/details",
+        loader: () => fetch("../public/news.json"),
+        element: <Details></Details>,
       },
       {
         path: "/career",
